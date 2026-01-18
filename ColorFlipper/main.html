@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <style>
+        h3,
+        h4 {
+            text-align: center;
+        }
+
+        .container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        #Green {
+            background-color: green;
+        }
+
+        #Blue {
+            background-color: blue;
+        }
+
+        #Red {
+            background-color: red;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        button {
+            border-radius: 4px;
+            width: 100px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h3>Color Flipper</h3><br>
+    <h4>Choose the color below </h4>
+    <div class="container">
+        <button id="Green">Green</button>
+        <button id="Blue">Blue</button>
+        <button id="Red">Red</button>
+        <button id="yellow">yellow</button>
+        <button id="random">Randon</button>
+    </div>
+
+    <script>
+        const body = document.querySelector("body");
+        const green = document.getElementById("Green");
+        const blue = document.getElementById("Blue");
+        const red = document.getElementById("Red");
+        const yellow = document.getElementById
+        ("yellow");
+        const random = document.getElementById("random")
+
+        green.addEventListener("click" ,() => {
+            body.style.backgroundColor = "green";
+        })
+        blue.addEventListener("click",()=>{
+            body.style.backgroundColor="blue"
+        })
+        red.addEventListener("click", ()=>{
+            body.style.backgroundColor="red"
+        })
+        yellow.addEventListener("click", ()=> {
+            body.style.backgroundColor="yellow"
+        })
+
+        random.addEventListener("click", RandomColor)
+
+        function RandomColor() {
+            const r =Math.floor(Math.random() * 255)
+            const g =Math.floor(Math.random() * 255)
+            const b =Math.floor(Math.random() * 255)
+
+            const colore=`rgb(${r}, ${g}, ${b})`
+            body.style.backgroundColor = colore
+        }
+    </script>
+
+</body>
+
+</html>
